@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Giftings Test</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script defer src="main.js"></script>
+    <script defer src='jquery.js'></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="intro_page" style="display:inline">
+        <header>
+            <a class="hmbgr"><i class="fa fa-bars"></i></a>
+            <h1>Spiritual Giftings Test</h1>
+        </header>
+        <main>
+            <div class="greetings">
+                <h2>GREETINGS!</h2>
+                <p>You are about to become involved in an exciting spiritual exercise. God has given 
+                    you one or more spiritual gifts if you are a Christian, and discovering that gift or gifts will 
+                    be a thrilling experience. 
+                     You will be asked to answer the 125 questions found in the Wagner “Modified 
+                    Houts Questionnaire.” This spiritual gifts discovery instrument was originally suggested 
+                    by Dr. Richard F. Houts, a professor in the North American Baptist Theological 
+                    Seminary, in 1976. Subsequently it has been modified by C. Peter Wagner of the Charles 
+                    E. Fuller Institute of Evangelism and Church Growth., and keyed in to his classic book, 
+                    Your Spiritual Gifts Can Help Your Church Grow, now the best selling book in the field 
+                    of spiritual gifts. The copy you have in your hand is the fifth edition and the first 
+                    complete revision of the original published version. 
+                     Thousands and thousands of believers have been blessed by taking the Modified 
+                    Houts Questionnaire. Constant feedback from them has enabled us to refine it to the point 
+                    where it will give you a fairly accurate picture of what kind of ministry God expects you 
+                    to be carrying out in your group of believers. 
+                     However, do not regard the results of this test as final. The three or four gifts you 
+                    score highest in may or may not be your spiritual gifts. But you can be sure in any case 
+                    that they are a starting point for prayer and experimentation. You will need other 
+                    members of the body of Christ to help you confirm what gifts you have. 
+                     An excellent use of this questionnaire is to fill it in as part of the “Spiritual Gifts 
+                    Discovery Workshop” offered by the Fuller Institute. A pastor or teacher in your church 
+                    can administer this workshop, and the Fuller Institute provides all instructional materials 
+                    needed by both teacher and participant. 
+                    C. Peter Wagner</p>
+            </div>
+            <div id="instructions">
+                <h3>BEFORE YOU START… </h3>
+                <h3>Follow these four steps…</h3>
+                <table>
+                    <tr>
+                        <td>Step 1</td>
+                        <td>Go through the list of 125 statements in the questionnaire on pages 2 – 10. 
+                            For each one, mark to what extent the statement is true of your life: 
+                            MUCH, SOME, LITTLE, or NOT AT ALL. </td>
+                    </tr>
+                    <tr>
+                        <td>Step II</td>
+                        <td>Your score will be calculated and displayed for you.</td>
+                    </tr>
+                    <tr>
+                        <td>Step III</td>
+                        <td>Review Spiritual Gifts</td>
+                    </tr>
+                    <tr>Step IV</tr>
+                    <tr>Finally, complete the excercise to gain a tentative evaluation of where 
+                        your gifts may lie and to explore the implications for your ministry in the 
+                        body of Christ.</tr>
+                </table>
+                <h3>Once youhave completed all the steps you will be given an oppurtunity to either print or send your results.</h3>
+            </div>
+            <div id="start_quiz">
+                <div class="controls">
+                    <button id="start-btn" class="start-btn btn" onClick="reveal()">Begin</button>
+                    <button id="cancel-btn" class="next-btn btn hide">Cancel</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <div id="quiz_page" style="display:none">
+        <header>
+            <a class="hmbgr"><i class="fa fa-bars"></i></a>
+            <h1>Spiritual Giftings Test</h1>
+            <h2>WAGNER-MODIFIED HOUTS QUESTIONNAIRE</h2>
+        </header>
+        <nav>
+
+        </nav>
+        <main>
+            <div class="container">
+                <div id="question-container" class="hide">
+                    <div id="id_num"></div><div id="question">Click next to begin</div>
+                    <table class="question_table">
+                        <tr>
+                            <td>
+                                <div id="answer-buttons" class="btn-grid">
+                                    <button id="btn" class="btn" onClick="much_selected()">Much</button>
+                                    <button id="btn" class="btn" onClick="some_selected()">Some</button>
+                                    <button id="btn" class="btn" onClick="little_selected()">Little</button>
+                                    <button id="btn" class="btn" onClick="not_selected()">Not At All</button>
+                                </div>
+                            </td>
+                            <td>                    
+                                <div id="selected_answer" style="display:none">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="controls">
+                    <button id="back-btn" class="next-btn btn hide">Back</button>
+                    <button id="next-btn" class="next-btn btn hide" onClick="populate_question()">Next</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="score_page" style="display:none">
+        <header>
+            <a class="hmbgr"><i class="fa fa-bars"></i></a>
+            <h1>Spiritual Giftings Test</h1>
+            <h2>Results</h2>
+        </header>
+        <main>
+            <div id="results">
+                <canvas id="GiftsChart"></canvas>
+            </div>
+            <div id="list_gifts">
+                &nsbp;
+            </div>
+            <div id="dom_sub">
+                <h2>Your Dominant Gifts</h2>
+                <ol id="dom_list">
+                    &nsbp;
+                </ol>
+                <h2>Your Subordinate Gifts</h2>
+                <ol id="sub_list">
+                    &nsbp;
+                </ol>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <i>Created by Ockernet</i>
+    </footer>
+</body>
+</html>

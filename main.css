@@ -1,0 +1,161 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: papyrus;
+}
+
+html {
+    --dark-blue: rgb(0, 5, 150);
+    --highlight: hsl(32,10%,95%);
+    --grey: rgba(99, 99, 99, 0.549);
+    --tan: rgb(213, 196, 176);
+    --light-blue: rgb(105, 146, 250);
+  }
+
+body {
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+header {
+    background-color: var(--grey);
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+}
+header > h1 {
+    margin:0;
+}
+header > h2 {
+    margin: 40px 0px 0px 0px;
+}
+
+a.hmbgr {
+    background-color: var(--grey);
+    color: var(--highlight);
+    padding: .95em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+  }
+  a.hmbgr:hover {
+    background-color: var(--highlight); 
+    color: var(--dark-blue);
+  }
+div#intro_page > main {
+    max-width:90%;
+    margin:5%;
+}
+
+#start_quiz {
+    text-align: center;
+}
+
+div#quiz_page > main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 88vh;
+}
+
+div.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: var(--grey);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+
+}
+
+.question_table {
+    width:300px;
+    
+}
+
+.btn-grid {
+    display: grid;
+    width: 100px;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: var(--light-blue);
+    padding: 5px;
+}
+.btn:hover {
+    background-color: var(--highlight);
+}
+
+#selected_answer {
+    text-align: center;
+    background-color: var(--light-blue);
+
+    box-shadow: 0 0 2px 0.5px;
+}
+
+#results {
+    display:flex;
+    justify-content: center;
+    margin: 5%;
+}
+#GiftsChart {
+    max-width:40%;
+    margin:2%;
+    justify-content: center;
+}
+#list_gifts {
+    height:30%;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+
+}
+
+#dom_sub {
+    display:grid;
+    text-align: center;
+    justify-content: center;
+}
+#dom_sub > ol {
+    font-size: 23px;
+}
+
+                /* Mobile Build */
+/* The following changes the styling for mobile users */
+@media only screen and (max-width: 768px) {
+    h1 { 
+        line-height: 51px;
+        padding-right: 1.75em;
+        height: 51px;
+        margin: 0;
+        font-size: 1.5em;
+    }
+    nav { padding: 0; }
+    nav a { 
+        display: block;
+        padding: .2em;
+        font-size: 1em; 
+    }
+    nav ul { 
+        margin: 0;
+        padding: 0; 
+    }
+    nav li { 
+        display: block; 
+        text-align: center;
+        margin: 0;
+        padding: 0; 
+        border-bottom: 1px solid #fff;
+    }
+    nav li:last-child { border-bottom: 0px; }
+    main { padding: 0.4em; }
+    a.hmbgr { display: flex; }
+    }
