@@ -1,2 +1,2 @@
 # Spiritual_Giftings_Test
-This is a simply application to administer a spiritual giftings test.
+This is a simple application to administer a spiritual giftings test.
